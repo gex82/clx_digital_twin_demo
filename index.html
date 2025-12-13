@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supply Chain Autopilot (Demo)</title>
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Leaflet (Network Map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SCA</div>
+      <div class="brandtext">
+        <div class="title">Supply Chain Autopilot</div>
+        <div class="subtitle">Synthetic, “live-feeling” demo • approve & execute • explainable logic</div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="scenario-pills" id="scenarioPills"></div>
+      <button class="btn btn-ghost" id="btnSnapshot" title="Download current state + action log">Download snapshot</button>
+      <button class="btn btn-ghost" id="btnReset" title="Reset to baseline synthetic state">Reset</button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="#/exec"      data-route="exec">Executive Brief</a>
+    <a href="#/control"   data-route="control">Control Tower</a>
+    <a href="#/network"   data-route="network">Network</a>
+    <a href="#/transport" data-route="transport">Transportation</a>
+    <a href="#/distribution" data-route="distribution">Distribution</a>
+    <a href="#/inventory" data-route="inventory">Inventory</a>
+    <a href="#/scenario"  data-route="scenario">Scenario Simulator</a>
+    <a href="#/playbooks" data-route="playbooks">Playbooks</a>
+    <a href="#/data"      data-route="data">Data Explorer</a>
+  </nav>
+
+  <main class="main">
+    <div id="app"></div>
+  </main>
+
+  <footer class="footer">
+    <div>Demo-only synthetic data • All actions update in-browser state immediately • “Audit trail” action log included</div>
+    <div class="mono" id="clock"></div>
+  </footer>
+
+  <!-- Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script src="./app.js"></script>
+</body>
+</html>
